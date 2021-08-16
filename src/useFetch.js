@@ -1,3 +1,4 @@
+import { waitFor } from "@testing-library/react";
 import { useState, useEffect } from "react";
 
 const useFetch = (url) => {
@@ -29,7 +30,7 @@ const useFetch = (url) => {
             setError(err.message);
           }
         });
-    }, 500);
+    }, 250);
     
     return () => abortCont.abort();
   }, [url]);
